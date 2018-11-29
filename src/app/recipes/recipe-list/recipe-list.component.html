@@ -1,0 +1,20 @@
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success">Search</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row" (mouseleave)="fireClear()">
+    <div class="col-xs-12" (mouseover)="fire(recipe)" *ngFor="let recipe of recipes">
+        <div class="list-group-item clearfix">
+        <span class="pull-left">
+          <p class="list-group-item-heading">{{recipe.name}}</p>
+          <p class="list-group-item-text">{{recipe.designation}}</p>
+        </span>
+        <span class="pull-right">
+          <img src="{{recipe.image}}" alt="{{recipe.name}}" class="img-responsive"
+          style="max-height: 50px">
+        </span>
+        </div>
+    </div>
+  </div>

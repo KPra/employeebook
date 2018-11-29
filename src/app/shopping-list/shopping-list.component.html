@@ -1,0 +1,14 @@
+
+<div class="container">
+  <app-shopping-list-edit></app-shopping-list-edit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="list-group">
+      <div class="list-group-item" *ngFor="let item of items">
+        {{item.name}} :: {{item.amount}}
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
