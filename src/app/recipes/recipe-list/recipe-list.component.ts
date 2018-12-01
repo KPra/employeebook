@@ -10,20 +10,16 @@ export class RecipeListComponent implements OnInit {
   recipes = [new RecipeItemComponent('name1', 'designation1', 'team1', 'DOJ1', 'assets/image1.jpg'),
     new RecipeItemComponent('name2', 'designation2', 'team2', 'DOJ2', 'assets/image1.jpg')];
   @Input() receivedRecipe: RecipeItemComponent;
-  @Output() clearAll = new EventEmitter();
 
   display: boolean = false;
   showDetails: boolean = false;
-  @Input() showDetailsNext: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
   fire() {
-    this.clearAll.emit(false);
-    console.log('fired show details' + ' showDetailsNext '+ this.showDetailsNext + ' recipe '+this.receivedRecipe.name);
-    this.showDetailsNext = true;
+    console.log('fire called');
     this.showDetails = true;
   }
 
@@ -44,5 +40,6 @@ export class RecipeListComponent implements OnInit {
   hideDetails(){
     console.log('left details pop up');
     this.display = false;
+    this.showDetails = false;
   }
 }

@@ -11,7 +11,7 @@
         </span>
         </div>
     </div>
-    <div class="col-xs-5 list-group-item disDiv" *ngIf="showDetails && showDetailsNext" (mouseenter)="displayDetails()" (mouseleave)="hideDetails()">
+    <div class="col-xs-5 list-group-item disDiv" *ngIf="showDetails" (mouseenter)="displayDetails()" (mouseleave)="hideDetails()">
       <app-recipe-item-detail [receivedRecipe]="receivedRecipe"></app-recipe-item-detail>
     </div>
   </div>
