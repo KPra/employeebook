@@ -1,10 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
-      <app-recipe-list (valueChange)="processEvent($event)" (valueClear)="clearEvent($event)"></app-recipe-list>
+    <div class="col-xs-5">
+      <button class="btn btn-success">Search</button>
     </div>
-    <div class="col-md-5" *ngIf="receivedRecipe !== null" (mouseenter)="showDetails()" (mouseleave)="hideDetails()">
-      <app-recipe-item-detail [receivedRecipe]="receivedRecipe"></app-recipe-item-detail>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12" *ngFor="let recipe of recipes">
+      <app-recipe-list [receivedRecipe]="recipe" (clearAll)="invokeClearAll($event)" [showDetailsNext]="clearAll"></app-recipe-list>
     </div>
   </div>
 </div>

@@ -7,38 +7,16 @@ import {RecipeItemComponent} from "./recipe-list/recipe-item/recipe-item.compone
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  receivedRecipe: RecipeItemComponent = null;
-  display: boolean = false;
+  recipes = [new RecipeItemComponent('name1', 'designation1', 'team1', 'DOJ1', 'assets/image1.jpg'),
+    new RecipeItemComponent('name2', 'designation2', 'team2', 'DOJ2', 'assets/image1.jpg')];
+  clearAll:boolean = true;
   constructor() { }
 
   ngOnInit() {
   }
 
-  processEvent(recipe) {
-    this.receivedRecipe = recipe;
-    console.log('received : ' + recipe.name);
-  }
-
-  clearEvent(event) {
-    console.log('clearEvent called!, and display is ' + this.display);
-    // if (!this.display) {
-    //   this.receivedRecipe = null;
-    // }
-    setTimeout(() => {
-        if (!this.display) {
-            this.receivedRecipe = null;
-        }
-    }, 2000);
-  }
-
-  showDetails() {
-    console.log('show details called');
-    this.display = true;
-  }
-
-  hideDetails() {
-    console.log('hide details called');
-    this.display = false;
-    this.receivedRecipe = null;
+  invokeClearAll(clear) {
+    console.log('invokeClearAll inside parent called!');
+    this.clearAll = clear;
   }
 }

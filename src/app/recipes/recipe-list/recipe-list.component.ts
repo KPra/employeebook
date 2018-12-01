@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RecipeItemComponent} from "./recipe-item/recipe-item.component";
 
 @Component({
@@ -9,22 +9,40 @@ import {RecipeItemComponent} from "./recipe-item/recipe-item.component";
 export class RecipeListComponent implements OnInit {
   recipes = [new RecipeItemComponent('name1', 'designation1', 'team1', 'DOJ1', 'assets/image1.jpg'),
     new RecipeItemComponent('name2', 'designation2', 'team2', 'DOJ2', 'assets/image1.jpg')];
+  @Input() receivedRecipe: RecipeItemComponent;
+  @Output() clearAll = new EventEmitter();
 
-  @Output() valueChange = new EventEmitter();
-  @Output() valueClear = new EventEmitter();
-
+  display: boolean = false;
+  showDetails: boolean = false;
+  @Input() showDetailsNext: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
-  fire(recipe) {
-    console.log('fired ' + recipe.name);
-    this.valueChange.emit(recipe);
+  fire() {
+    this.clearAll.emit(false);
+    console.log('fired show details' + ' showDetailsNext '+ this.showDetailsNext + ' recipe '+this.receivedRecipe.name);
+    this.showDetailsNext = true;
+    this.showDetails = true;
   }
 
   fireClear() {
     console.log('fired value clear');
-    this.valueClear.emit('clear');
+    setTimeout(() => {
+      if (!this.display) {
+        this.showDetails = false;
+      }
+    }, 2000);
+  }
+
+  displayDetails(){
+    console.log('entered details pop up');
+    this.display = true;
+  }
+
+  hideDetails(){
+    console.log('left details pop up');
+    this.display = false;
   }
 }
