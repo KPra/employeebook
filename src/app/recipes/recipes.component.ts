@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {RecipeItemComponent} from "./recipe-list/recipe-item/recipe-item.component";
+import {RecipeItemComponent} from './recipe-list/recipe-item/recipe-item.component';
+import {PopoverModule} from 'ngx-popover';
 
 @Component({
   selector: 'app-recipes',

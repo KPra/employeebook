@@ -1,5 +1,7 @@
   <div class="row">
-    <div class="col-xs-5" (mouseenter)="fire()" (mouseleave)="fireClear()">
+    <div class="col-xs-5" (mouseenter)="fire()" (mouseleave)="fireClear()" [popover]="myPopover"
+         [popoverOnHover]="true" popoverPlacement="right" [popoverDismissTimeout]="1000000"
+         [popoverCloseOnMouseOutside]="false">
         <div class="list-group-item clearfix">
         <span class="pull-left">
           <p class="list-group-item-heading">{{receivedRecipe.name}}</p>
@@ -10,8 +12,14 @@
           style="max-height: 50px">
         </span>
         </div>
+      <div>
+        <popover-content #myPopover title="Employee Details">
+          <app-recipe-item-detail [receivedRecipe]="receivedRecipe"></app-recipe-item-detail>
+        </popover-content>
+      </div>
     </div>
-    <div class="col-xs-5 list-group-item disDiv" *ngIf="showDetails" (mouseenter)="displayDetails()" (mouseleave)="hideDetails()">
+
+    <!--<div class="col-xs-5 list-group-item disDiv" *ngIf="showDetails" (mouseenter)="displayDetails()" (mouseleave)="hideDetails()">
       <app-recipe-item-detail [receivedRecipe]="receivedRecipe"></app-recipe-item-detail>
-    </div>
+    </div>-->
   </div>
