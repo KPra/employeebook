@@ -1,7 +1,8 @@
-<app-header></app-header>
+<app-header [dataReceivedHeader]="dataReceived"></app-header>
 <div class="container">
   <div class="col-xs-12">
-    <app-recipes></app-recipes>
+    <!--<app-recipes (emitSelectedRecipeFromRecipes)="emitSelectedRecipe($event)"></app-recipes>-->
+    <router-outlet (emitSelectedRecipeFromRecipes)="emitSelectedRecipe($event)"></router-outlet>
   </div>
 </div>
 <!--<app-shopping-list></app-shopping-list>-->

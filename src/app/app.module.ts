@@ -11,7 +11,9 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
 import {PopoverModule} from 'ngx-popover';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatBadgeModule} from '@angular/material';
+import {AppRoutingModule} from './app-routing.module';
+import { TrackListComponent } from './track-list/track-list.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import {MatButtonModule, MatIconModule} from '@angular/material';
     RecipeItemDetailComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
+    TrackListComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,9 @@ import {MatButtonModule, MatIconModule} from '@angular/material';
     PopoverModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatBadgeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

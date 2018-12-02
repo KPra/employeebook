@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RecipeItemComponent} from "../recipe-list/recipe-item/recipe-item.component";
 
 @Component({
@@ -8,6 +8,7 @@ import {RecipeItemComponent} from "../recipe-list/recipe-item/recipe-item.compon
 })
 export class RecipeItemDetailComponent implements OnInit {
   @Input() receivedRecipe: RecipeItemComponent;
+  @Output() emitSelectedRecipe = new EventEmitter();
   constructor() { }
   color = '';
   ngOnInit() {
@@ -16,9 +17,13 @@ export class RecipeItemDetailComponent implements OnInit {
   toggleColor() {
     console.log('toggle color bell icon');
     if (this.color === 'warn') {
+      console.log('removing from tracklist');
       this.color = '';
+      this.emitSelectedRecipe.emit({'recipe': this.receivedRecipe, 'action': 'remove'});
     } else {
+      console.log('adding to tracklist');
       this.color = 'warn';
+      this.emitSelectedRecipe.emit({'recipe': this.receivedRecipe, 'action': 'add'});
     }
   }
 }

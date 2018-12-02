@@ -13,7 +13,7 @@
         </span>
     </div>
     <popover-content #myPopover title="Employee Card">
-      <app-recipe-item-detail [receivedRecipe]="receivedRecipe"></app-recipe-item-detail>
+      <app-recipe-item-detail [receivedRecipe]="receivedRecipe" (emitSelectedRecipe)="emitSelectedRecipe($event)"></app-recipe-item-detail>
     </popover-content>
   </div>
 </div>

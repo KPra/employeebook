@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  dataReceived: any;
+
+  emitSelectedRecipe(data) {
+    console.log('received in app component ts');
+    this.dataReceived = data;
+  }
 }
