@@ -9,8 +9,8 @@
         <p>{{receivedRecipe.designation}}</p>
         <p>Team</p>
         <p>DOJ</p>
-        <button mat-icon-button color="warn">
-          <mat-icon>add_alert</mat-icon>
+        <button mat-icon-button color="{{color}}" (click)="toggleColor()">
+          <mat-icon style="font-size: 36px;margin-right: 12px;">add_alert</mat-icon>
         </button>
       </div>
       <br>

@@ -9,7 +9,16 @@ import {RecipeItemComponent} from "../recipe-list/recipe-item/recipe-item.compon
 export class RecipeItemDetailComponent implements OnInit {
   @Input() receivedRecipe: RecipeItemComponent;
   constructor() { }
-
+  color = '';
   ngOnInit() {
+  }
+
+  toggleColor() {
+    console.log('toggle color bell icon');
+    if (this.color === 'warn') {
+      this.color = '';
+    } else {
+      this.color = 'warn';
+    }
   }
 }
