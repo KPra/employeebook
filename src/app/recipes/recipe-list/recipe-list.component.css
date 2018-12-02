@@ -1,5 +1,4 @@
-.disDiv
+popover-content div
 {
-  position: absolute;
-  right: 150px;
+  max-width: 500px;
 }

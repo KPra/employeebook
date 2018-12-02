@@ -11,35 +11,10 @@ export class RecipeListComponent implements OnInit {
     new RecipeItemComponent('name2', 'designation2', 'team2', 'DOJ2', 'assets/image1.jpg')];
   @Input() receivedRecipe: RecipeItemComponent;
 
-  display: boolean = false;
-  showDetails: boolean = false;
+  display: boolean;
+  showDetails: boolean;
   constructor() { }
 
   ngOnInit() {
-  }
-
-  fire() {
-    console.log('fire called');
-    this.showDetails = true;
-  }
-
-  fireClear() {
-    console.log('fired value clear');
-    setTimeout(() => {
-      if (!this.display) {
-        this.showDetails = false;
-      }
-    }, 2000);
-  }
-
-  displayDetails(){
-    console.log('entered details pop up');
-    this.display = true;
-  }
-
-  hideDetails(){
-    console.log('left details pop up');
-    this.display = false;
-    this.showDetails = false;
   }
 }

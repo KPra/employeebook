@@ -1,14 +1,19 @@
 <div class="container">
-  <div class="row ">
+  <div class="row">
     <div>
-      <div>
-        <img src="{{receivedRecipe.image}}" class="img-responsive" style="max-height: 150px"/>
+      <div class="col-xs-2">
+        <img src="{{receivedRecipe.image}}" class="img-responsive" style="max-height: 120px"/>
+      </div>
+      <div class="col-xs-3">
+        <p>{{receivedRecipe.name}}</p>
+        <p>{{receivedRecipe.designation}}</p>
+        <p>Team</p>
+        <p>DOJ</p>
+        <button mat-icon-button>
+          <mat-icon>add_alert</mat-icon>
+        </button>
       </div>
       <br>
-      <p>{{receivedRecipe.name}}</p>
-      <p>{{receivedRecipe.designation}}</p>
-      <p>Team</p>
-      <p>DOJ</p>
     </div>
   </div>
 </div>

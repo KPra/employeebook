@@ -10,6 +10,8 @@ import { RecipeItemDetailComponent } from './recipes/recipe-item-detail/recipe-i
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
 import {PopoverModule} from 'ngx-popover';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import {PopoverModule} from 'ngx-popover';
   imports: [
     BrowserModule,
     FormsModule,
-    PopoverModule
+    PopoverModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
