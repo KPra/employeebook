@@ -5,7 +5,10 @@
     </div>
     <div class="navbar-default">
       <ul class="nav navbar-nav">
-        <li><a href="#" routerLink="/track"><span matBadge="{{seenCount}}" matBadgeOverlap="false">TrackList</span></a></li>
+        <li><a href="#" routerLink="/track">
+          <span *ngIf="shouldWeShow()" matBadge="{{seenCount}}" matBadgeOverlap="false">TrackList</span>
+          <span *ngIf="!shouldWeShow()">TrackList</span>
+        </a></li>
         <li><a href="#" routerLink="/search">Search</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right dropdown">

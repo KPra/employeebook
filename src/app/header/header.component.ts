@@ -36,4 +36,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  shouldWeShow() {
+    if (this.seenCount === 0) {
+      return false;
+    }
+    return true;
+  }
 }
