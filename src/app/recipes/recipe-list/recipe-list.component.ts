@@ -19,7 +19,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   emitSelectedRecipe(data){
-    console.log('received '+data.recipe.name);
+    console.log('received ' + data.recipe.name);
     this.emitSelectedRecipeFromList.emit(data);
   }
 }

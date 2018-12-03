@@ -14,6 +14,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule, MatBadgeModule} from '@angular/material';
 import {AppRoutingModule} from './app-routing.module';
 import { TrackListComponent } from './track-list/track-list.component';
+import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recipe-item-holder.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { TrackListComponent } from './track-list/track-list.component';
     RecipeItemDetailComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    TrackListComponent,
+    TrackListComponent
   ],
   imports: [
     BrowserModule,
