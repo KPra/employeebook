@@ -12,6 +12,8 @@ import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/sh
 import {PopoverModule} from 'ngx-popover';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule, MatBadgeModule} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
 import {AppRoutingModule} from './app-routing.module';
 import { TrackListComponent } from './track-list/track-list.component';
 import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recipe-item-holder.component';
@@ -35,7 +37,9 @@ import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recip
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

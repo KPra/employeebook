@@ -9,11 +9,19 @@ import {RecipeItemHolderComponent} from "./recipe-list/recipe-item/recipe-item-h
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  recipes = [new RecipeItemComponent('name1', 'designation1', 'team1', 'DOJ1', 'assets/image1.jpg'),
-    new RecipeItemComponent('name2', 'designation2', 'team2', 'DOJ2', 'assets/image1.jpg')];
+  recipes = [new RecipeItemComponent('James', 'Cloud Designer', 'Cloud DevOps', '10/05/2015', 'assets/image1.png'),
+    new RecipeItemComponent('Harry', 'DB Developer', 'Release Management', '12/04/2017', 'assets/image1.png'),
+    new RecipeItemComponent('Lily', 'Java Developer', 'Release Management', '03/08/2016', 'assets/image11.jpg'),
+    new RecipeItemComponent('Snape', 'UI Developer', 'FrontEnd', '07/03/2014', 'assets/image1.png'),
+    new RecipeItemComponent('Ron', 'Backend Developer', 'Middleware', '20/10/2012', 'assets/image1.png')];
+  recipesCopy = [new RecipeItemComponent('James', 'Cloud Designer', 'Cloud DevOps', '10/05/2015', 'assets/image1.png'),
+    new RecipeItemComponent('Harry', 'DB Developer', 'Release Management', '12/04/2017', 'assets/image1.png'),
+    new RecipeItemComponent('Lily', 'Java Developer', 'Release Management', '03/08/2016', 'assets/image11.jpg'),
+    new RecipeItemComponent('Snape', 'UI Developer', 'FrontEnd', '07/03/2014', 'assets/image1.png'),
+    new RecipeItemComponent('Ron', 'Backend Developer', 'Middleware', '20/10/2012', 'assets/image1.png')];
   /*@Output() emitSelectedRecipeFromRecipes = new EventEmitter();*/
   public dataReceived: any;
-
+  public searchTerm: string;
 
   constructor(private myService: RecipeItemHolderComponent) {
   }
@@ -26,6 +34,13 @@ export class RecipesComponent implements OnInit {
     this.dataReceived = data;
     this.myService.myMethod(this.dataReceived);
     /*this.emitSelectedRecipeFromRecipes.emit(data);*/
+  }
+
+  search(): void {
+    let term = this.searchTerm;
+    this.recipes = this.recipesCopy.filter(function(tag) {
+      return tag.name.indexOf(term) >= 0;
+    });
   }
 
 }
