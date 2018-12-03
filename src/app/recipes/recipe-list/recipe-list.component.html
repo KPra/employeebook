@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-xs-5" [popover]="myPopover"
        [popoverOnHover]="true" popoverPlacement="right" [popoverDismissTimeout]="1000000"
-       [popoverCloseOnMouseOutside]="false">
-    <div class="list-group-item clearfix">
+       [popoverCloseOnMouseOutside]="false" (mouseenter)="divSelected(true)" (mouseleave)="divSelected(false)">
+    <div class="list-group-item clearfix" [ngClass]="{highlight : selectedStatus}">
         <span class="pull-left">
           <p class="list-group-item-heading">{{receivedRecipe.name}}</p>
           <p class="list-group-item-text">{{receivedRecipe.designation}}</p>

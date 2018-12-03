@@ -1,4 +1,4 @@
-popover-content div
-{
-  max-width: 500px;
+.highlight{
+  background-color: #D3D3D3;
+  cursor: pointer;
 }

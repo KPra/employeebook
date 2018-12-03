@@ -13,6 +13,7 @@ export class RecipeListComponent implements OnInit {
   @Output() emitSelectedRecipeFromList = new EventEmitter();
   display: boolean;
   showDetails: boolean;
+  selectedStatus: boolean;
   constructor() { }
 
   ngOnInit() {
@@ -21,5 +22,9 @@ export class RecipeListComponent implements OnInit {
   emitSelectedRecipe(data){
     console.log('received ' + data.recipe.name);
     this.emitSelectedRecipeFromList.emit(data);
+  }
+
+  divSelected(selectedStatus) {
+    this.selectedStatus = selectedStatus;
   }
 }
