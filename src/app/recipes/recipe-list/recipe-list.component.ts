@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RecipeItemComponent} from "./recipe-item/recipe-item.component";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,13 +8,13 @@ import {RecipeItemComponent} from "./recipe-item/recipe-item.component";
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  recipes = [new RecipeItemComponent('name1', 'designation1', 'team1', 'DOJ1', 'assets/image1.jpg'),
-    new RecipeItemComponent('name2', 'designation2', 'team2', 'DOJ2', 'assets/image1.jpg')];
   @Input() receivedRecipe: RecipeItemComponent;
   @Output() emitSelectedRecipeFromList = new EventEmitter();
   display: boolean;
   showDetails: boolean;
   selectedStatus: boolean;
+  popoverName = 'myPopover';
+  position = new FormControl('after');
   constructor() { }
 
   ngOnInit() {
@@ -26,5 +27,14 @@ export class RecipeListComponent implements OnInit {
 
   divSelected(selectedStatus) {
     this.selectedStatus = selectedStatus;
+  }
+
+  disableCardAndDisplayDetails() {
+    if (this.showDetails === true) {
+      this.showDetails = false;
+    } else {
+      this.showDetails = true;
+    }
+    return this.showDetails;
   }
 }

@@ -8,7 +8,7 @@ import {Component, Injectable, OnInit} from '@angular/core';
 export class RecipeItemComponent implements OnInit {
 
   constructor(public name: string, public designation: string, public team: string, public DOJ: string,
-              public image: string) { }
+              public image: string, public notify: boolean) { }
 
   ngOnInit() {
   }

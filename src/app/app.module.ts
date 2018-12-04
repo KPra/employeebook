@@ -14,6 +14,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule, MatBadgeModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {AppRoutingModule} from './app-routing.module';
 import { TrackListComponent } from './track-list/track-list.component';
 import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recipe-item-holder.component';
@@ -39,7 +41,9 @@ import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recip
     MatBadgeModule,
     AppRoutingModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
