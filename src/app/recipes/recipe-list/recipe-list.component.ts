@@ -13,7 +13,7 @@ export class RecipeListComponent implements OnInit {
   display: boolean;
   showDetails: boolean;
   selectedStatus: boolean;
-  popoverName = 'myPopover';
+  popoverDisabled = false;
   position = new FormControl('after');
   constructor() { }
 
@@ -31,9 +31,13 @@ export class RecipeListComponent implements OnInit {
 
   disableCardAndDisplayDetails() {
     if (this.showDetails === true) {
+      console.log('show Details true');
       this.showDetails = false;
+      this.popoverDisabled = true;
     } else {
+      console.log('show Details false');
       this.showDetails = true;
+      this.popoverDisabled = false;
     }
     return this.showDetails;
   }

@@ -2,7 +2,8 @@
   <div class="col-xs-5" [popover]="myPopover"
        [popoverOnHover]="true" popoverPlacement="right" [popoverDismissTimeout]="1000000"
        [popoverCloseOnMouseOutside]="false" (mouseenter)="divSelected(true)" (mouseleave)="divSelected(false)"
-  (click)="disableCardAndDisplayDetails()">
+       (click)="disableCardAndDisplayDetails()"
+       [popoverDisabled]="popoverDisabled">
     <div class="list-group-item clearfix" [ngClass]="{highlight : selectedStatus}">
         <span class="pull-left">
           <p class="list-group-item-heading">{{receivedRecipe.name}}</p>
@@ -14,21 +15,22 @@
         </span>
     </div>
     <popover-content #myPopover title="Employee Card">
-      <app-recipe-item-detail [receivedRecipe]="receivedRecipe" (emitSelectedRecipe)="emitSelectedRecipe($event)"></app-recipe-item-detail>
+      <app-recipe-item-detail [receivedRecipe]="receivedRecipe"
+                              (emitSelectedRecipe)="emitSelectedRecipe($event)"></app-recipe-item-detail>
     </popover-content>
   </div>
   <div class="col-xs-1">
     <div class="row">
       <br>
-    <button mat-icon-button color="warn" *ngIf="receivedRecipe.notify"
-            matTooltip="High-Risk" [matTooltipPosition]="position.value">
-      <mat-icon style="font-size: 25px;margin-right: 2px;">warning</mat-icon>
-    </button>
+      <button mat-icon-button color="warn" *ngIf="receivedRecipe.notify"
+               matTooltip="High-Risk" [matTooltipPosition]="position.value">
+        <mat-icon style="font-size: 25px;margin-right: 2px;">warning</mat-icon>
+      </button>
     </div>
   </div>
-  <!--<div class="col-xs-6">
+  <div class="col-xs-6">
     <div class="list-group-item clearfix" [ngClass]="{highlight : selectedStatus}">
 
     </div>
-  </div>-->
+  </div>
 </div>
