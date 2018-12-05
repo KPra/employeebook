@@ -12,6 +12,7 @@
 <div class="row">
   <div class="col-xs-12" *ngFor="let recipe of recipes">
     <app-recipe-list [receivedRecipe]="recipe"
-                     (emitSelectedRecipeFromList)="emitSelectedRecipe($event)"></app-recipe-list>
+                     (emitSelectedRecipeFromList)="emitSelectedRecipe($event)"
+        (emitShowDetails)="emitShowDetails($event)" [showDetails]="showOthers"></app-recipe-list>
   </div>
 </div>

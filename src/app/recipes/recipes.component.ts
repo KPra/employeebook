@@ -22,6 +22,7 @@ export class RecipesComponent implements OnInit {
   /*@Output() emitSelectedRecipeFromRecipes = new EventEmitter();*/
   public dataReceived: any;
   public searchTerm: string;
+  public showOthers = true;
 
   constructor(private myService: RecipeItemHolderComponent) {
   }
@@ -41,6 +42,10 @@ export class RecipesComponent implements OnInit {
     this.recipes = this.recipesCopy.filter(function(tag) {
       return tag.name.indexOf(term) >= 0;
     });
+  }
+
+  emitShowDetails(showDetails) {
+    this.showOthers = false;
   }
 
 }

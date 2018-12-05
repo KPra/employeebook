@@ -10,10 +10,12 @@ import {FormControl} from "@angular/forms";
 export class RecipeListComponent implements OnInit {
   @Input() receivedRecipe: RecipeItemComponent;
   @Output() emitSelectedRecipeFromList = new EventEmitter();
+  @Output() emitShowDetails = new EventEmitter();
   display: boolean;
-  showDetails: boolean;
+  @Input() showDetails = true;
   selectedStatus: boolean;
   popoverDisabled = false;
+  isEmitting = false;
   position = new FormControl('after');
   constructor() { }
 
@@ -30,15 +32,15 @@ export class RecipeListComponent implements OnInit {
   }
 
   disableCardAndDisplayDetails() {
-    if (this.showDetails === true) {
-      console.log('show Details true');
-      this.showDetails = false;
+    if (this.popoverDisabled === false) {
+      console.log('popoverDisabled true');
       this.popoverDisabled = true;
-    } else {
-      console.log('show Details false');
-      this.showDetails = true;
-      this.popoverDisabled = false;
+      this.isEmitting = true;
+      this.emitShowDetails.emit('show');
     }
-    return this.showDetails;
+    // else {
+    //   console.log('popoverDisabled false');
+    //   this.popoverDisabled = false;
+    // }
   }
 }
