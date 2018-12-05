@@ -45,7 +45,11 @@ export class RecipesComponent implements OnInit {
   }
 
   emitShowDetails(showDetails) {
-    this.showOthers = false;
+    if (showDetails === 'show'){
+      this.showOthers = false;
+    }else{
+      this.showOthers = true;
+    }
   }
 
 }

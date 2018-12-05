@@ -43,4 +43,14 @@ export class RecipeListComponent implements OnInit {
     //   this.popoverDisabled = false;
     // }
   }
+
+  enableCardAndHideDetails(){
+    console.log('enableCardAndHideDetails called!')
+    if(this.popoverDisabled === true){
+      console.log('popoverDisabled false');
+      this.popoverDisabled = false;
+      this.isEmitting = false;
+      this.emitShowDetails.emit('dshow');
+    }
+  }
 }

@@ -30,7 +30,14 @@
   </div>
   <div class="col-xs-7" *ngIf="isEmitting">
     <div class="list-group-item clearfix" [ngClass]="{highlight : selectedStatus}">
-
+      <div class="row" style="text-align: end;">
+        <div (click)="enableCardAndHideDetails()">
+      <button mat-icon-button color="warn"
+              matTooltip="Close" [matTooltipPosition]="position.value">
+        <mat-icon style="font-size: 30px;margin-right: 2px;">highlight_off</mat-icon>
+      </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
