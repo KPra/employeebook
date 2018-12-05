@@ -19,6 +19,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {AppRoutingModule} from './app-routing.module';
 import { TrackListComponent } from './track-list/track-list.component';
 import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recipe-item-holder.component';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recip
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
-    MatTooltipModule
+    MatTooltipModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

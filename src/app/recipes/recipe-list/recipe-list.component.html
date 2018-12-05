@@ -23,7 +23,7 @@
     <div class="row">
       <br>
       <button mat-icon-button color="warn" *ngIf="receivedRecipe.notify"
-               matTooltip="High-Risk" [matTooltipPosition]="position.value">
+              matTooltip="High-Risk" [matTooltipPosition]="position.value">
         <mat-icon style="font-size: 25px;margin-right: 2px;">warning</mat-icon>
       </button>
     </div>
@@ -32,11 +32,23 @@
     <div class="list-group-item clearfix" [ngClass]="{highlight : selectedStatus}">
       <div class="row" style="text-align: end;">
         <div (click)="enableCardAndHideDetails()">
-      <button mat-icon-button color="warn"
-              matTooltip="Close" [matTooltipPosition]="position.value">
-        <mat-icon style="font-size: 30px;margin-right: 2px;">highlight_off</mat-icon>
-      </button>
+          <button mat-icon-button color="warn"
+                  matTooltip="Close" [matTooltipPosition]="position.value">
+            <mat-icon style="font-size: 30px;margin-right: 2px;">highlight_off</mat-icon>
+          </button>
         </div>
+      </div>
+      <div class="row">
+        <ngx-charts-pie-chart *ngIf="chartdata"
+                              [view]="view"
+                              [scheme]="colorScheme"
+                              [results]="employeeData"
+                              [legend]="showLegend"
+                              [explodeSlices]="explodeSlices"
+                              [labels]="showLabels"
+                              [doughnut]="doughnut"
+                              (select)="onSelect($event)">
+        </ngx-charts-pie-chart>
       </div>
     </div>
   </div>
