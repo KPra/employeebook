@@ -30,13 +30,36 @@
   </div>
   <div class="col-xs-7" *ngIf="isEmitting">
     <div class="list-group-item clearfix" [ngClass]="{highlight : selectedStatus}">
-      <div class="row" style="text-align: end;">
-        <div (click)="enableCardAndHideDetails()">
+      <div class="row">
+        <div (click)="enableCardAndHideDetails()" style="text-align: end;">
           <button mat-icon-button color="warn"
                   matTooltip="Close" [matTooltipPosition]="position.value">
             <mat-icon style="font-size: 30px;margin-right: 2px;">highlight_off</mat-icon>
           </button>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="From">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-xs-1">
+        </div>
+        <div class="col-xs-3">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker1" placeholder="To">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <!--<div class="col-xs-2">-->
+          <!--<button mat-icon-button color="primary">-->
+            <!--<mat-icon style="font-size: 30px">search</mat-icon>-->
+          <!--</button>-->
+        <!--</div>-->
       </div>
       <div class="row">
         <ngx-charts-pie-chart *ngIf="chartdata"

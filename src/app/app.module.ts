@@ -13,13 +13,14 @@ import {PopoverModule} from 'ngx-popover';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule, MatBadgeModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule, MatNativeDateModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AppRoutingModule} from './app-routing.module';
 import { TrackListComponent } from './track-list/track-list.component';
 import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recipe-item-holder.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -46,7 +47,9 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     MatInputModule,
     MatExpansionModule,
     MatTooltipModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
