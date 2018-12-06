@@ -18,6 +18,7 @@ export class RecipeListComponent implements OnInit {
   popoverDisabled = false;
   isEmitting = false;
   position = new FormControl('after');
+  bellstatus: boolean;
   // ----------------------------------------------------------------------
   chartdata: boolean = true;
 
@@ -39,6 +40,7 @@ export class RecipeListComponent implements OnInit {
 
   // Chart
   view: any[] = [];
+  viewDepth = [400, 300];
   showLegend = true;
 
   colorScheme = {
@@ -59,7 +61,7 @@ export class RecipeListComponent implements OnInit {
 
   initializeColors(employeeValue) {
     // email check
-    console.log('>>>>>>>>>>>>> ' + employeeValue)
+    console.log('>>>>>>>>>>>>> ' + employeeValue);
     if (employeeValue >= 7 && employeeValue <= 10) {
       return '#5AA454';
     }else if (employeeValue >= 4 && employeeValue < 7) {
@@ -75,8 +77,9 @@ export class RecipeListComponent implements OnInit {
     this.colorScheme.domain[2] = this.initializeColors(this.employeeData[2].value);
   }
 
-  emitSelectedRecipe(data){
+  emitSelectedRecipe(data) {
     console.log('received ' + data.recipe.name);
+    this.bellstatus = true;
     this.emitSelectedRecipeFromList.emit(data);
   }
 
@@ -85,13 +88,16 @@ export class RecipeListComponent implements OnInit {
   }
 
   disableCardAndDisplayDetails() {
-    if (this.popoverDisabled === false) {
-      console.log('popoverDisabled true');
-      this.popoverDisabled = true;
-      this.isEmitting = true;
-      this.emitShowDetails.emit('show');
-      this.initColors();
+    if (!this.bellstatus) {
+      if (this.popoverDisabled === false) {
+        console.log('popoverDisabled true');
+        this.popoverDisabled = true;
+        this.isEmitting = true;
+        this.emitShowDetails.emit('show');
+        this.initColors();
+      }
     }
+    this.bellstatus = false;
     // else {
     //   console.log('popoverDisabled false');
     //   this.popoverDisabled = false;

@@ -61,7 +61,10 @@
           <!--</button>-->
         <!--</div>-->
       </div>
-      <div class="row">
+      <div class="row" [popover]="myPopover1"
+           popoverPlacement="left" [popoverDismissTimeout]="1000000"
+           [popoverCloseOnMouseOutside]="false"
+           [popoverDisabled]="false">
         <ngx-charts-pie-chart *ngIf="chartdata"
                               [view]="view"
                               [scheme]="colorScheme"
@@ -72,6 +75,19 @@
                               [doughnut]="doughnut"
                               (select)="onSelect($event)">
         </ngx-charts-pie-chart>
+        <popover-content title="Line Graph" #myPopover1>
+          <div>
+          <ngx-charts-pie-chart *ngIf="chartdata"
+                                [view]="viewDepth"
+                                [scheme]="colorScheme"
+                                [results]="employeeData"
+                                [explodeSlices]="explodeSlices"
+                                [labels]="showLabels"
+                                [doughnut]="doughnut"
+                                (select)="onSelect($event)">
+          </ngx-charts-pie-chart>
+          </div>
+        </popover-content>
       </div>
     </div>
   </div>
