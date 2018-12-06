@@ -31,9 +31,9 @@
   <div class="col-xs-7" *ngIf="isEmitting">
     <div class="list-group-item clearfix" [ngClass]="{highlight : selectedStatus}">
       <div class="row">
-        <div (click)="enableCardAndHideDetails()" style="text-align: end;">
+        <div style="text-align: end;">
           <button mat-icon-button color="warn"
-                  matTooltip="Close" [matTooltipPosition]="position.value">
+                  matTooltip="Close" [matTooltipPosition]="position.value" (click)="enableCardAndHideDetails()">
             <mat-icon style="font-size: 30px;margin-right: 2px;">highlight_off</mat-icon>
           </button>
         </div>
@@ -64,7 +64,8 @@
       <div class="row" [popover]="myPopover1"
            popoverPlacement="left" [popoverDismissTimeout]="1000000"
            [popoverCloseOnMouseOutside]="false"
-           [popoverDisabled]="false">
+           [popoverDisabled]="false"
+           [popoverOnHover]="true">
         <ngx-charts-pie-chart *ngIf="chartdata"
                               [view]="view"
                               [scheme]="colorScheme"
@@ -73,7 +74,7 @@
                               [explodeSlices]="explodeSlices"
                               [labels]="showLabels"
                               [doughnut]="doughnut"
-                              (select)="onSelect($event)">
+                              (activate)="onSelect($event)">
         </ngx-charts-pie-chart>
         <popover-content title="Line Graph" #myPopover1>
           <div>

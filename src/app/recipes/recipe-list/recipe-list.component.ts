@@ -19,6 +19,7 @@ export class RecipeListComponent implements OnInit {
   isEmitting = false;
   position = new FormControl('after');
   bellstatus: boolean;
+  showInternalGraph: boolean;
   // ----------------------------------------------------------------------
   chartdata: boolean = true;
 
@@ -38,6 +39,29 @@ export class RecipeListComponent implements OnInit {
     }
   ];
 
+  employeeNextLevelData = [
+        {
+          "value": 5174,
+          "name": "2016-09-23T12:29:09.431Z"
+        },
+        {
+          "value": 4715,
+          "name": "2016-09-13T16:46:39.480Z"
+        },
+        {
+          "value": 5852,
+          "name": "2016-09-12T21:53:01.992Z"
+        },
+        {
+          "value": 6336,
+          "name": "2016-09-20T12:03:01.398Z"
+        },
+        {
+          "value": 2780,
+          "name": "2016-09-20T03:14:05.376Z"
+        }
+      ];
+
   // Chart
   view: any[] = [];
   viewDepth = [400, 300];
@@ -51,7 +75,8 @@ export class RecipeListComponent implements OnInit {
   doughnut = false;
 
   onSelect(event) {
-    console.log(event);
+    console.log(event.value.name);
+    this.showInternalGraph = true;
   }
   // ----------------------------------------------------------------------
   constructor() { }
