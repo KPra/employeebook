@@ -19,7 +19,8 @@ export class RecipeListComponent implements OnInit {
   isEmitting = false;
   position = new FormControl('after');
   bellstatus: boolean;
-  showInternalGraph: boolean;
+  name = '';
+  value = '';
   // ----------------------------------------------------------------------
   chartdata: boolean = true;
 
@@ -39,32 +40,11 @@ export class RecipeListComponent implements OnInit {
     }
   ];
 
-  employeeNextLevelData = [
-        {
-          "value": 5174,
-          "name": "2016-09-23T12:29:09.431Z"
-        },
-        {
-          "value": 4715,
-          "name": "2016-09-13T16:46:39.480Z"
-        },
-        {
-          "value": 5852,
-          "name": "2016-09-12T21:53:01.992Z"
-        },
-        {
-          "value": 6336,
-          "name": "2016-09-20T12:03:01.398Z"
-        },
-        {
-          "value": 2780,
-          "name": "2016-09-20T03:14:05.376Z"
-        }
-      ];
+  employeeNextLevelData: any[];
 
   // Chart
   view: any[] = [];
-  viewDepth = [400, 300];
+  viewDepth = [380, 300];
   showLegend = true;
 
   colorScheme = {
@@ -76,7 +56,37 @@ export class RecipeListComponent implements OnInit {
 
   onSelect(event) {
     console.log(event.value.name);
-    this.showInternalGraph = true;
+    if(event.value.name === 'Email') {
+      this.employeeNextLevelData = [{
+        name: this.receivedRecipe.name, series:
+          [{name: '20/11/2018', value: 8}, {name: '22/11/2018', value: 7}, {name: '18/11/2018', value: 8}, {name: '24/11/2018', value: 6}, {
+            name: '26/11/2018',
+            value: 5
+          }]
+      }];
+      this.name = 'Date';
+      this.value = 'Rating';
+    }else if (event.value.name === 'Leave'){
+      this.employeeNextLevelData = [{
+        name: this.receivedRecipe.name, series:
+          [{name: '20/11/2018', value: 10}, {name: '21/11/2018', value: 0}, {name: '22/11/2018', value: 10}, {name: '23/11/2018', value: 10}, {
+            name: '24/11/2018', value: 10}, {name: '25/11/2018', value: 10}, {name: '26/11/2018', value: 10}, {name: '27/11/2018', value: 0},
+            {name: '28/11/2018', value: 10},{name: '29/11/2018', value: 10}, {name: '30/11/2018', value: 10}
+            ]
+      }];
+      this.name = 'Date';
+      this.value = 'Availability';
+    }else if(event.value.name === 'Swipe I/O'){
+      this.employeeNextLevelData = [{
+        name: this.receivedRecipe.name, series:
+          [{name: '20/11/2018', value: 8}, {name: '21/11/2018', value: 8}, {name: '22/11/2018', value: 8}, {name: '23/11/2018', value: 8}, {
+            name: '24/11/2018', value: 6}, {name: '25/11/2018', value: 6}, {name: '26/11/2018', value: 6}, {name: '27/11/2018', value: 5},
+            {name: '28/11/2018', value: 5},{name: '29/11/2018', value: 5}, {name: '30/11/2018', value: 5}
+          ]
+      }];
+      this.name = 'Date';
+      this.value = 'Duration';
+    }
   }
   // ----------------------------------------------------------------------
   constructor() { }

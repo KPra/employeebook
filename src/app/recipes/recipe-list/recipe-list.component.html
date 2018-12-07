@@ -78,15 +78,30 @@
         </ngx-charts-pie-chart>
         <popover-content title="Line Graph" #myPopover1>
           <div>
-          <ngx-charts-pie-chart *ngIf="chartdata"
+          <!--<ngx-charts-pie-chart *ngIf="chartdata"
                                 [view]="viewDepth"
                                 [scheme]="colorScheme"
                                 [results]="employeeData"
                                 [explodeSlices]="explodeSlices"
                                 [labels]="showLabels"
                                 [doughnut]="doughnut"
-                                (select)="onSelect($event)">
-          </ngx-charts-pie-chart>
+                                (select)="onSelect($event)">-->
+            <!--</ngx-charts-pie-chart>-->
+            <ngx-charts-line-chart
+              [view]="viewDepth"
+              [scheme]="colorScheme"
+              [results]="employeeNextLevelData"
+              [gradient]="true"
+              [xAxis]="true"
+              [yAxis]="true"
+              [showXAxisLabel]="true"
+              [showYAxisLabel]="true"
+              [xAxisLabel]='name'
+              [yAxisLabel]='value'
+              [autoScale]="true"
+              [timeline]="timeline"
+              (select)="onSelect($event)">
+            </ngx-charts-line-chart>
           </div>
         </popover-content>
       </div>
