@@ -19,6 +19,7 @@ export class RecipeListComponent implements OnInit {
   isEmitting = false;
   position = new FormControl('after');
   bellstatus: boolean;
+  @Input() highRiskColor;
   name = '';
   value = '';
   // ----------------------------------------------------------------------

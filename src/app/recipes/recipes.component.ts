@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {RecipeItemComponent} from './recipe-list/recipe-item/recipe-item.component';
 import {PopoverModule} from 'ngx-popover';
 import {RecipeItemHolderComponent} from "./recipe-list/recipe-item/recipe-item-holder.component";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-recipes',
@@ -23,7 +24,8 @@ export class RecipesComponent implements OnInit {
   public dataReceived: any;
   public searchTerm: string;
   public showOthers = true;
-
+  position = new FormControl('after');
+  public highRiskColor = '';
   constructor(private myService: RecipeItemHolderComponent) {
   }
 
@@ -52,4 +54,13 @@ export class RecipesComponent implements OnInit {
     }
   }
 
+  changeColorAndShortlist(){
+    if(this.highRiskColor === ''){
+      this.highRiskColor = 'warn';
+      console.log('shortlist all the high risk ones');
+    } else if(this.highRiskColor === 'warn'){
+      this.highRiskColor = '';
+      console.log('display all');
+    }
+  }
 }

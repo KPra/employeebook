@@ -1,4 +1,4 @@
-<div class="row" *ngIf="showDetails || isEmitting">
+<div class="row" *ngIf="(showDetails || isEmitting)">
   <div class="col-xs-5" [popover]="myPopover"
        [popoverOnHover]="true" popoverPlacement="right" [popoverDismissTimeout]="1000000"
        [popoverCloseOnMouseOutside]="false" (mouseenter)="divSelected(true)" (mouseleave)="divSelected(false)"
