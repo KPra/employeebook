@@ -1,0 +1,68 @@
+        <div class="row">
+            <div class="col-xs-3" (mouseenter)="divSelected(true)" (mouseleave)="divSelected(false)">
+                <div class="list-group-item clearfix" [ngClass]="{highlight : selectedStatus}">
+                  <span class="pull-left">
+                      <p class="list-group-item-heading"> {{topEmployee.name}}</p>
+                      <p class="list-group-item-text">{{topEmployee.desgn}}</p>
+                    </span>
+                  <span class="pull-right">
+                        <img src="{{topEmployee.image}}" alt="{{topEmployee.name}}" class="img-responsive"
+                             style="max-height: 50px">
+                  </span>  
+                </div>
+            </div>
+            <div *ngIf="!display">
+                <button mat-icon-button color="warn" (click)="displayChild();"
+                matTooltip="Expand" [matTooltipPosition]="position.value">
+                 <mat-icon style="font-size: 25px;margin-top: 2px;">add</mat-icon>
+                </button>
+            </div>     
+            <div *ngIf="display">
+                <button mat-icon-button color="warn" (click)="displayChild();"
+                matTooltip="Collapse" [matTooltipPosition]="position.value">
+                 <mat-icon style="font-size: 25px;margin-top: 2px;">remove</mat-icon>
+                </button>
+            </div>                
+          </div>         
+          <div class="row" *ngIf="display">              
+              <div class="col-xs-3" style="margin-left: 100px;">
+                  <span style=" width: 1px;
+                  background-color: silver;
+                  height: 60px;
+                  float: left;
+                  border-radius: 2px;-moz-transform: rotate(-15deg);  
+                  -o-transform: rotate(-15deg);  
+                  -webkit-transform: rotate(-15deg);  
+                  -ms-transform: rotate(-15deg);  
+                  transform: rotate(-15deg);  "></span>
+                  
+              </div>
+              <div class="col-xs-2" style="margin-left: -110px;">
+                  <span style=" width: 1px;
+                  background-color: silver;
+                  height: 60px;
+                  float: left;
+                  border-radius: 2px;-moz-transform: rotate(-20deg);  
+                  -o-transform: rotate(-20deg);  
+                  -webkit-transform: rotate(-20deg);  
+                  -ms-transform: rotate(-20deg);  
+                  transform: rotate(-20deg);  "></span>
+                  </div>
+            </div>                   
+          <div class="row" *ngIf="display">                
+            <div *ngFor="let employee of topEmployee.reports">           
+              <app-dashinternal [employee]="employee"></app-dashinternal>             
+            </div>
+          </div>
+          <div class="row">
+              <ngx-charts-pie-chart *ngIf="true"
+              [view]="view"
+              [scheme]="colorScheme"
+              [results]="employeeData"
+              [legend]="showLegend"
+              [explodeSlices]="explodeSlices"
+              [labels]="showLabels"
+              [doughnut]="doughnut"
+              (activate)="onSelect($event)">
+              </ngx-charts-pie-chart>
+          </div>

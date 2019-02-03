@@ -26,20 +26,7 @@ export class RecipeListComponent implements OnInit {
   chartdata: boolean = true;
 
   countryCount = [];
-  employeeData = [
-    {
-      'name': 'Email',
-      'value': '8'
-    },
-    {
-      'name': 'Swipe I/O',
-      'value': '6.9'
-    },
-    {
-      'name': 'Leave',
-      'value': '3'
-    }
-  ];
+  employeeData: any;
 
   employeeNextLevelData: any[];
 
@@ -60,19 +47,17 @@ export class RecipeListComponent implements OnInit {
     if(event.value.name === 'Email') {
       this.employeeNextLevelData = [{
         name: this.receivedRecipe.name, series:
-          [{name: '20/11/2018', value: 8}, {name: '22/11/2018', value: 7}, {name: '18/11/2018', value: 8}, {name: '24/11/2018', value: 6}, {
-            name: '26/11/2018',
-            value: 5
-          }]
+          [{name: this.receivedRecipe.email_detailed[0].data, value: this.receivedRecipe.email_detailed[0].rating}, {name: this.receivedRecipe.email_detailed[1].data, value: this.receivedRecipe.email_detailed[1].rating}, {name: this.receivedRecipe.email_detailed[2].data, value: this.receivedRecipe.email_detailed[2].rating}, {name: this.receivedRecipe.email_detailed[3].data, value: this.receivedRecipe.email_detailed[3].rating},
+          {name: this.receivedRecipe.email_detailed[4].data, value: this.receivedRecipe.email_detailed[4].rating}]
       }];
       this.name = 'Date';
       this.value = 'Rating';
     }else if (event.value.name === 'Leave'){
       this.employeeNextLevelData = [{
         name: this.receivedRecipe.name, series:
-          [{name: '20/11/2018', value: 10}, {name: '21/11/2018', value: 0}, {name: '22/11/2018', value: 10}, {name: '23/11/2018', value: 10}, {
-            name: '24/11/2018', value: 10}, {name: '25/11/2018', value: 10}, {name: '26/11/2018', value: 10}, {name: '27/11/2018', value: 0},
-            {name: '28/11/2018', value: 10},{name: '29/11/2018', value: 10}, {name: '30/11/2018', value: 10}
+          [{name: this.receivedRecipe.leave_detailed[0].data, value: this.receivedRecipe.leave_detailed[0].rating},{name: this.receivedRecipe.leave_detailed[1].data, value: this.receivedRecipe.leave_detailed[1].rating} , {name: this.receivedRecipe.leave_detailed[2].data, value: this.receivedRecipe.leave_detailed[2].rating}, {name: this.receivedRecipe.leave_detailed[3].data, value: this.receivedRecipe.leave_detailed[3].rating}, 
+          {name: this.receivedRecipe.leave_detailed[4].data, value: this.receivedRecipe.leave_detailed[4].rating}, {name: this.receivedRecipe.leave_detailed[5].data, value: this.receivedRecipe.leave_detailed[5].rating}, {name: this.receivedRecipe.leave_detailed[6].data, value: this.receivedRecipe.leave_detailed[6].rating}, {name: this.receivedRecipe.leave_detailed[7].data, value: this.receivedRecipe.leave_detailed[7].rating},
+            {name: this.receivedRecipe.leave_detailed[8].data, value: this.receivedRecipe.leave_detailed[8].rating},{name: this.receivedRecipe.leave_detailed[9].data, value: this.receivedRecipe.leave_detailed[9].rating}, {name: this.receivedRecipe.leave_detailed[10].data, value: this.receivedRecipe.leave_detailed[10].rating}
             ]
       }];
       this.name = 'Date';
@@ -80,9 +65,9 @@ export class RecipeListComponent implements OnInit {
     }else if(event.value.name === 'Swipe I/O'){
       this.employeeNextLevelData = [{
         name: this.receivedRecipe.name, series:
-          [{name: '20/11/2018', value: 8}, {name: '21/11/2018', value: 8}, {name: '22/11/2018', value: 8}, {name: '23/11/2018', value: 8}, {
-            name: '24/11/2018', value: 6}, {name: '25/11/2018', value: 6}, {name: '26/11/2018', value: 6}, {name: '27/11/2018', value: 5},
-            {name: '28/11/2018', value: 5},{name: '29/11/2018', value: 5}, {name: '30/11/2018', value: 5}
+          [{name: this.receivedRecipe.sio_detailed[0].data, value: this.receivedRecipe.sio_detailed[0].rating}, {name: this.receivedRecipe.sio_detailed[1].data, value: this.receivedRecipe.sio_detailed[1].rating}, {name: this.receivedRecipe.sio_detailed[2].data, value: this.receivedRecipe.sio_detailed[2].rating}, {name: this.receivedRecipe.sio_detailed[3].data, value: this.receivedRecipe.sio_detailed[3].rating}, 
+          {name: this.receivedRecipe.sio_detailed[4].data, value: this.receivedRecipe.sio_detailed[4].rating}, {name: this.receivedRecipe.sio_detailed[5].data, value: this.receivedRecipe.sio_detailed[5].rating}, {name: this.receivedRecipe.sio_detailed[6].data, value: this.receivedRecipe.sio_detailed[6].rating}, {name: this.receivedRecipe.sio_detailed[7].data, value: this.receivedRecipe.sio_detailed[7].rating},
+            {name: this.receivedRecipe.sio_detailed[8].data, value: this.receivedRecipe.sio_detailed[8].rating},{name: this.receivedRecipe.sio_detailed[9].data, value: this.receivedRecipe.sio_detailed[9].rating},{name: this.receivedRecipe.sio_detailed[10].data, value: this.receivedRecipe.sio_detailed[10].rating}
           ]
       }];
       this.name = 'Date';
@@ -100,7 +85,7 @@ export class RecipeListComponent implements OnInit {
     console.log('>>>>>>>>>>>>> ' + employeeValue);
     if (employeeValue >= 7 && employeeValue <= 10) {
       return '#5AA454';
-    }else if (employeeValue >= 4 && employeeValue < 7) {
+    }else if (employeeValue > 4 && employeeValue < 7) {
       return '#C7B42C';
     }else {
       return '#A10A28';
@@ -130,6 +115,21 @@ export class RecipeListComponent implements OnInit {
         this.popoverDisabled = true;
         this.isEmitting = true;
         this.emitShowDetails.emit('show');
+       
+        this.employeeData = [
+          {
+            'name': 'Email',
+            'value': this.receivedRecipe.email_cumulative
+          },
+          {
+            'name': 'Swipe I/O',
+            'value': this.receivedRecipe.sio_cumulative
+          },
+          {
+            'name': 'Leave',
+            'value': this.receivedRecipe.leave_cumulative
+          }
+        ];
         this.initColors();
       }
     }

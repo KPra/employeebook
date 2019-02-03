@@ -21,6 +21,9 @@ import { TrackListComponent } from './track-list/track-list.component';
 import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recipe-item-holder.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {MatDatepickerModule } from '@angular/material/datepicker';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashinternalComponent } from './dashboard/dashinternal/dashinternal.component';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import {MatDatepickerModule } from '@angular/material/datepicker';
     RecipeItemDetailComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    TrackListComponent
+    TrackListComponent,
+    DashboardComponent,
+    DashinternalComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +54,11 @@ import {MatDatepickerModule } from '@angular/material/datepicker';
     MatTooltipModule,
     NgxChartsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [],
+  exports: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
