@@ -55,7 +55,7 @@ export class RecipeListComponent implements OnInit {
     }else if (event.value.name === 'Leave'){
       this.employeeNextLevelData = [{
         name: this.receivedRecipe.name, series:
-          [{name: this.receivedRecipe.leave_detailed[0].data, value: this.receivedRecipe.leave_detailed[0].rating},{name: this.receivedRecipe.leave_detailed[1].data, value: this.receivedRecipe.leave_detailed[1].rating} , {name: this.receivedRecipe.leave_detailed[2].data, value: this.receivedRecipe.leave_detailed[2].rating}, {name: this.receivedRecipe.leave_detailed[3].data, value: this.receivedRecipe.leave_detailed[3].rating}, 
+          [{name: this.receivedRecipe.leave_detailed[0].data, value: this.receivedRecipe.leave_detailed[0].rating},{name: this.receivedRecipe.leave_detailed[1].data, value: this.receivedRecipe.leave_detailed[1].rating} , {name: this.receivedRecipe.leave_detailed[2].data, value: this.receivedRecipe.leave_detailed[2].rating}, {name: this.receivedRecipe.leave_detailed[3].data, value: this.receivedRecipe.leave_detailed[3].rating},
           {name: this.receivedRecipe.leave_detailed[4].data, value: this.receivedRecipe.leave_detailed[4].rating}, {name: this.receivedRecipe.leave_detailed[5].data, value: this.receivedRecipe.leave_detailed[5].rating}, {name: this.receivedRecipe.leave_detailed[6].data, value: this.receivedRecipe.leave_detailed[6].rating}, {name: this.receivedRecipe.leave_detailed[7].data, value: this.receivedRecipe.leave_detailed[7].rating},
             {name: this.receivedRecipe.leave_detailed[8].data, value: this.receivedRecipe.leave_detailed[8].rating},{name: this.receivedRecipe.leave_detailed[9].data, value: this.receivedRecipe.leave_detailed[9].rating}, {name: this.receivedRecipe.leave_detailed[10].data, value: this.receivedRecipe.leave_detailed[10].rating}
             ]
@@ -65,13 +65,23 @@ export class RecipeListComponent implements OnInit {
     }else if(event.value.name === 'Swipe I/O'){
       this.employeeNextLevelData = [{
         name: this.receivedRecipe.name, series:
-          [{name: this.receivedRecipe.sio_detailed[0].data, value: this.receivedRecipe.sio_detailed[0].rating}, {name: this.receivedRecipe.sio_detailed[1].data, value: this.receivedRecipe.sio_detailed[1].rating}, {name: this.receivedRecipe.sio_detailed[2].data, value: this.receivedRecipe.sio_detailed[2].rating}, {name: this.receivedRecipe.sio_detailed[3].data, value: this.receivedRecipe.sio_detailed[3].rating}, 
+          [{name: this.receivedRecipe.sio_detailed[0].data, value: this.receivedRecipe.sio_detailed[0].rating}, {name: this.receivedRecipe.sio_detailed[1].data, value: this.receivedRecipe.sio_detailed[1].rating}, {name: this.receivedRecipe.sio_detailed[2].data, value: this.receivedRecipe.sio_detailed[2].rating}, {name: this.receivedRecipe.sio_detailed[3].data, value: this.receivedRecipe.sio_detailed[3].rating},
           {name: this.receivedRecipe.sio_detailed[4].data, value: this.receivedRecipe.sio_detailed[4].rating}, {name: this.receivedRecipe.sio_detailed[5].data, value: this.receivedRecipe.sio_detailed[5].rating}, {name: this.receivedRecipe.sio_detailed[6].data, value: this.receivedRecipe.sio_detailed[6].rating}, {name: this.receivedRecipe.sio_detailed[7].data, value: this.receivedRecipe.sio_detailed[7].rating},
             {name: this.receivedRecipe.sio_detailed[8].data, value: this.receivedRecipe.sio_detailed[8].rating},{name: this.receivedRecipe.sio_detailed[9].data, value: this.receivedRecipe.sio_detailed[9].rating},{name: this.receivedRecipe.sio_detailed[10].data, value: this.receivedRecipe.sio_detailed[10].rating}
           ]
       }];
       this.name = 'Date';
       this.value = 'Duration';
+    }else if(event.value.name === 'IdleTime'){
+      this.employeeNextLevelData = [{
+        name: this.receivedRecipe.name, series:
+          [{name: this.receivedRecipe.idle_detailed[0].data, value: this.receivedRecipe.idle_detailed[0].rating}, {name: this.receivedRecipe.idle_detailed[1].data, value: this.receivedRecipe.idle_detailed[1].rating}, {name: this.receivedRecipe.idle_detailed[2].data, value: this.receivedRecipe.idle_detailed[2].rating}, {name: this.receivedRecipe.idle_detailed[3].data, value: this.receivedRecipe.idle_detailed[3].rating},
+            {name: this.receivedRecipe.idle_detailed[4].data, value: this.receivedRecipe.idle_detailed[4].rating}, {name: this.receivedRecipe.idle_detailed[5].data, value: this.receivedRecipe.idle_detailed[5].rating}, {name: this.receivedRecipe.idle_detailed[6].data, value: this.receivedRecipe.idle_detailed[6].rating}, {name: this.receivedRecipe.idle_detailed[7].data, value: this.receivedRecipe.idle_detailed[7].rating},
+            {name: this.receivedRecipe.idle_detailed[8].data, value: this.receivedRecipe.idle_detailed[8].rating},{name: this.receivedRecipe.idle_detailed[9].data, value: this.receivedRecipe.idle_detailed[9].rating},{name: this.receivedRecipe.idle_detailed[10].data, value: this.receivedRecipe.idle_detailed[10].rating}
+          ]
+      }];
+      this.name = 'Date';
+      this.value = 'Hours';
     }
   }
   // ----------------------------------------------------------------------
@@ -96,6 +106,7 @@ export class RecipeListComponent implements OnInit {
     this.colorScheme.domain[0] = this.initializeColors(this.employeeData[0].value);
     this.colorScheme.domain[1] = this.initializeColors(this.employeeData[1].value);
     this.colorScheme.domain[2] = this.initializeColors(this.employeeData[2].value);
+    this.colorScheme.domain[3] = this.initializeColors(this.employeeData[3].value);
   }
 
   emitSelectedRecipe(data) {
@@ -115,7 +126,7 @@ export class RecipeListComponent implements OnInit {
         this.popoverDisabled = true;
         this.isEmitting = true;
         this.emitShowDetails.emit('show');
-       
+
         this.employeeData = [
           {
             'name': 'Email',
@@ -128,6 +139,10 @@ export class RecipeListComponent implements OnInit {
           {
             'name': 'Leave',
             'value': this.receivedRecipe.leave_cumulative
+          },
+          {
+            'name': 'IdleTime',
+            'value': this.receivedRecipe.idle_cumulative
           }
         ];
         this.initColors();

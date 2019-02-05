@@ -17,6 +17,8 @@ export class RecipeItemComponent implements OnInit {
               public leave_detailed: any[],
               public sio_cumulative: number,
               public sio_detailed: any[],
+              public idle_cumulative: number,
+              public idle_detailed: any[],
               public reports: RecipeItemComponent[]) { }
 
   ngOnInit() {
