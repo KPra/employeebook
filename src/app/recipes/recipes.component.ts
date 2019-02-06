@@ -8,6 +8,8 @@ import {RecipeItemComponent} from './recipe-list/recipe-item/recipe-item.compone
 import {PopoverModule} from 'ngx-popover';
 import {RecipeItemHolderComponent} from "./recipe-list/recipe-item/recipe-item-holder.component";
 import {FormControl} from "@angular/forms";
+import {Jobsearchrating} from "../dashboard/jobsearchrating";
+import {Entertainment} from "../dashboard/entertainment";
 
 @Component({
   selector: 'app-recipes',
@@ -25,9 +27,15 @@ export class RecipesComponent implements OnInit {
     new SIORating(8, '20/11/2018'), new SIORating(8, '21/11/2018'), new SIORating(7, '22/11/2018'), new SIORating(8, '23/11/2018'),
     new SIORating(6, '24/11/2018'), new SIORating(6, '25/11/2018'), new SIORating(6, '26/11/2018'), new SIORating(7, '27/11/2018'),
     new SIORating(5, '28/11/2018'), new SIORating(5, '29/11/2018'), new SIORating(5, '30/11/2018')
-  ], 5, [new Idletimerating(0, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(1, '23/11/2018'),
+  ], 7, [new Idletimerating(0, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(1, '23/11/2018'),
       new Idletimerating(0, '24/11/2018'), new Idletimerating(2, '25/11/2018'), new Idletimerating(0, '26/11/2018'), new Idletimerating(0, '27/11/2018'),
-      new Idletimerating(3, '28/11/2018'), new Idletimerating(0, '29/11/2018'), new Idletimerating(0, '30/11/2018')], []),
+      new Idletimerating(3, '28/11/2018'), new Idletimerating(0, '29/11/2018'), new Idletimerating(0, '30/11/2018')],
+    5, [new Jobsearchrating(0, '20/11/2018'), new Jobsearchrating(0, '21/11/2018'), new Jobsearchrating(3, '22/11/2018'), new Jobsearchrating(2, '23/11/2018'),
+      new Jobsearchrating(0, '24/11/2018'), new Jobsearchrating(4, '25/11/2018'), new Jobsearchrating(0, '26/11/2018'), new Jobsearchrating(0, '27/11/2018'),
+      new Jobsearchrating(3, '28/11/2018'), new Jobsearchrating(0, '29/11/2018'), new Jobsearchrating(0, '30/11/2018')],
+    [new Entertainment(0, '20/11/2018'), new Entertainment(0, '21/11/2018'), new Entertainment(3, '22/11/2018'), new Entertainment(3, '23/11/2018'),
+      new Entertainment(0, '24/11/2018'), new Entertainment(1, '25/11/2018'), new Entertainment(0, '26/11/2018'), new Entertainment(0, '27/11/2018'),
+      new Entertainment(2, '28/11/2018'), new Entertainment(0, '29/11/2018'), new Entertainment(0, '30/11/2018')], []),
     new RecipeItemComponent('Harry', 'DB Developer', 'Release Management', '12/04/2017', 'assets/image1.png', true,
   8, 8, 8, false, 2, [new EmailRating(-1, '20/11/2018'),
   new EmailRating(-0.5, '22/11/2018'), new EmailRating(-0.3, '23/11/2018'), new EmailRating(0.1, '24/11/2018'),
@@ -40,7 +48,13 @@ export class RecipesComponent implements OnInit {
     new SIORating(4, '28/11/2018'), new SIORating(3, '29/11/2018'), new SIORating(1, '30/11/2018')
   ], 5, [new Idletimerating(4, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(0, '22/11/2018'), new Idletimerating(0, '23/11/2018'),
         new Idletimerating(3, '24/11/2018'), new Idletimerating(4, '25/11/2018'), new Idletimerating(0, '26/11/2018'), new Idletimerating(0, '27/11/2018'),
-        new Idletimerating(4, '28/11/2018'), new Idletimerating(3, '29/11/2018'), new Idletimerating(0, '30/11/2018')], []),
+        new Idletimerating(4, '28/11/2018'), new Idletimerating(3, '29/11/2018'), new Idletimerating(0, '30/11/2018')],
+      3, [new Jobsearchrating(5, '20/11/2018'), new Jobsearchrating(0, '21/11/2018'), new Jobsearchrating(0, '22/11/2018'), new Jobsearchrating(0, '23/11/2018'),
+        new Jobsearchrating(3, '24/11/2018'), new Jobsearchrating(4, '25/11/2018'), new Jobsearchrating(0, '26/11/2018'), new Jobsearchrating(0, '27/11/2018'),
+        new Jobsearchrating(5, '28/11/2018'), new Jobsearchrating(1, '29/11/2018'), new Jobsearchrating(0, '30/11/2018')],
+      [new Entertainment(2, '20/11/2018'), new Entertainment(0, '21/11/2018'), new Entertainment(0, '22/11/2018'), new Entertainment(0, '23/11/2018'),
+        new Entertainment(4, '24/11/2018'), new Entertainment(3, '25/11/2018'), new Entertainment(0, '26/11/2018'), new Entertainment(0, '27/11/2018'),
+        new Entertainment(1, '28/11/2018'), new Entertainment(6, '29/11/2018'), new Entertainment(0, '30/11/2018')], []),
   new RecipeItemComponent('Lily', 'Java Developer', 'Release Management', '03/08/2016', 'assets/image11.jpg', false,
   8, 8, 8, false, 5, [new EmailRating(0, '20/11/2018'),
   new EmailRating(0.5, '22/11/2018'), new EmailRating(-0.5, '23/11/2018'), new EmailRating(-0.2, '24/11/2018'),
@@ -51,9 +65,15 @@ export class RecipesComponent implements OnInit {
     new SIORating(8, '20/11/2018'), new SIORating(7, '21/11/2018'), new SIORating(8, '22/11/2018'), new SIORating(7, '23/11/2018'),
     new SIORating(6, '24/11/2018'), new SIORating(6, '25/11/2018'), new SIORating(6, '26/11/2018'), new SIORating(8, '27/11/2018'),
     new SIORating(7, '28/11/2018'), new SIORating(7, '29/11/2018'), new SIORating(6, '30/11/2018')
-  ], 5, [new Idletimerating(1, '20/11/2018'), new Idletimerating(2, '21/11/2018'), new Idletimerating(3, '22/11/2018'), new Idletimerating(2, '23/11/2018'),
+  ], 8, [new Idletimerating(1, '20/11/2018'), new Idletimerating(2, '21/11/2018'), new Idletimerating(3, '22/11/2018'), new Idletimerating(2, '23/11/2018'),
       new Idletimerating(3, '24/11/2018'), new Idletimerating(2, '25/11/2018'), new Idletimerating(0, '26/11/2018'), new Idletimerating(0, '27/11/2018'),
-      new Idletimerating(1, '28/11/2018'), new Idletimerating(1, '29/11/2018'), new Idletimerating(2, '30/11/2018')], []),
+      new Idletimerating(1, '28/11/2018'), new Idletimerating(1, '29/11/2018'), new Idletimerating(2, '30/11/2018')],
+    7, [new Jobsearchrating(1, '20/11/2018'), new Jobsearchrating(0, '21/11/2018'), new Jobsearchrating(1, '22/11/2018'), new Jobsearchrating(0, '23/11/2018'),
+      new Jobsearchrating(1, '24/11/2018'), new Jobsearchrating(0, '25/11/2018'), new Jobsearchrating(0, '26/11/2018'), new Jobsearchrating(0, '27/11/2018'),
+      new Jobsearchrating(1, '28/11/2018'), new Jobsearchrating(1, '29/11/2018'), new Jobsearchrating(1, '30/11/2018')],
+    [new Entertainment(0, '20/11/2018'), new Entertainment(1, '21/11/2018'), new Entertainment(0, '22/11/2018'), new Entertainment(0, '23/11/2018'),
+      new Entertainment(1, '24/11/2018'), new Entertainment(1, '25/11/2018'), new Entertainment(0, '26/11/2018'), new Entertainment(0, '27/11/2018'),
+      new Entertainment(1, '28/11/2018'), new Entertainment(0, '29/11/2018'), new Entertainment(1, '30/11/2018')], []),
   new RecipeItemComponent('Snape', 'UI Developer', 'FrontEnd', '07/03/2014', 'assets/image1.png', false,
   8, 8, 8, false, 9, [new EmailRating(0.9, '20/11/2018'),
   new EmailRating(0.9, '22/11/2018'), new EmailRating(1, '23/11/2018'), new EmailRating(1, '24/11/2018'),
@@ -64,9 +84,15 @@ export class RecipesComponent implements OnInit {
     new SIORating(5, '20/11/2018'), new SIORating(4, '21/11/2018'), new SIORating(8, '22/11/2018'), new SIORating(5, '23/11/2018'),
     new SIORating(6, '24/11/2018'), new SIORating(4, '25/11/2018'), new SIORating(6, '26/11/2018'), new SIORating(5, '27/11/2018'),
     new SIORating(5, '28/11/2018'), new SIORating(4, '29/11/2018'), new SIORating(5, '30/11/2018')
-  ], 5, [new Idletimerating(1, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(1, '23/11/2018'),
+  ], 8, [new Idletimerating(1, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(1, '23/11/2018'),
       new Idletimerating(0, '24/11/2018'), new Idletimerating(0, '25/11/2018'), new Idletimerating(2, '26/11/2018'), new Idletimerating(0, '27/11/2018'),
-      new Idletimerating(2, '28/11/2018'), new Idletimerating(0, '29/11/2018'), new Idletimerating(2, '30/11/2018')], []),
+      new Idletimerating(2, '28/11/2018'), new Idletimerating(0, '29/11/2018'), new Idletimerating(2, '30/11/2018')],
+    7, [new Jobsearchrating(1, '20/11/2018'), new Jobsearchrating(0, '21/11/2018'), new Jobsearchrating(1, '22/11/2018'), new Jobsearchrating(1, '23/11/2018'),
+      new Jobsearchrating(0, '24/11/2018'), new Jobsearchrating(0, '25/11/2018'), new Jobsearchrating(1, '26/11/2018'), new Jobsearchrating(0, '27/11/2018'),
+      new Jobsearchrating(1, '28/11/2018'), new Jobsearchrating(0, '29/11/2018'), new Jobsearchrating(1, '30/11/2018')],
+    [new Entertainment(2, '20/11/2018'), new Entertainment(0, '21/11/2018'), new Entertainment(2, '22/11/2018'), new Entertainment(1, '23/11/2018'),
+      new Entertainment(0, '24/11/2018'), new Entertainment(0, '25/11/2018'), new Entertainment(2, '26/11/2018'), new Entertainment(0, '27/11/2018'),
+      new Entertainment(2, '28/11/2018'), new Entertainment(0, '29/11/2018'), new Entertainment(2, '30/11/2018')], []),
   new RecipeItemComponent('Ron', 'Backend Developer', 'Middleware', '20/10/2012', 'assets/image1.png', false,
   8, 8, 8, false, 8, [new EmailRating(1, '20/11/2018'),
   new EmailRating(0.5, '22/11/2018'), new EmailRating(0.3, '23/11/2018'), new EmailRating(0.2, '24/11/2018'),
@@ -77,9 +103,15 @@ export class RecipesComponent implements OnInit {
     new SIORating(6, '20/11/2018'), new SIORating(8, '21/11/2018'), new SIORating(5, '22/11/2018'), new SIORating(6, '23/11/2018'),
     new SIORating(5, '24/11/2018'), new SIORating(6, '25/11/2018'), new SIORating(6, '26/11/2018'), new SIORating(5, '27/11/2018'),
     new SIORating(5, '28/11/2018'), new SIORating(5, '29/11/2018'), new SIORating(5, '30/11/2018')
-  ], 5, [new Idletimerating(0, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(0, '23/11/2018'),
+  ], 6, [new Idletimerating(0, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(0, '23/11/2018'),
       new Idletimerating(1, '24/11/2018'), new Idletimerating(0, '25/11/2018'), new Idletimerating(2, '26/11/2018'), new Idletimerating(0, '27/11/2018'),
-      new Idletimerating(0, '28/11/2018'), new Idletimerating(1, '29/11/2018'), new Idletimerating(2, '30/11/2018')], [])];
+      new Idletimerating(0, '28/11/2018'), new Idletimerating(1, '29/11/2018'), new Idletimerating(2, '30/11/2018')],
+    5, [new Jobsearchrating(0, '20/11/2018'), new Jobsearchrating(0, '21/11/2018'), new Jobsearchrating(2, '22/11/2018'), new Jobsearchrating(0, '23/11/2018'),
+      new Jobsearchrating(1, '24/11/2018'), new Jobsearchrating(0, '25/11/2018'), new Jobsearchrating(2, '26/11/2018'), new Jobsearchrating(0, '27/11/2018'),
+      new Jobsearchrating(0, '28/11/2018'), new Jobsearchrating(1, '29/11/2018'), new Jobsearchrating(1, '30/11/2018')],
+    [new Entertainment(0, '20/11/2018'), new Entertainment(0, '21/11/2018'), new Entertainment(2, '22/11/2018'), new Entertainment(0, '23/11/2018'),
+      new Entertainment(2, '24/11/2018'), new Entertainment(0, '25/11/2018'), new Entertainment(3, '26/11/2018'), new Entertainment(0, '27/11/2018'),
+      new Entertainment(0, '28/11/2018'), new Entertainment(2, '29/11/2018'), new Entertainment(2, '30/11/2018')], [])];
   recipesCopy = this.recipes;
   /*@Output() emitSelectedRecipeFromRecipes = new EventEmitter();*/
   public dataReceived: any;

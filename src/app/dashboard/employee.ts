@@ -10,6 +10,8 @@ export class Employee {
     public team_email_cumulative: number,
     public team_leave_cumulative: number,
     public team_sio_cumulative: number,
+    public team_idle_cumulative: number,
+    public team_site_cumulative: number,
     public high_risk: boolean,
     public favorite: boolean,
     public email_cumulative: number,

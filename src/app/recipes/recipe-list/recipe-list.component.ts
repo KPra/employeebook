@@ -82,6 +82,23 @@ export class RecipeListComponent implements OnInit {
       }];
       this.name = 'Date';
       this.value = 'Hours';
+    }else if(event.value.name === 'SiteVisits'){
+      this.employeeNextLevelData = [{
+        name: 'Job Search', series:
+          [{name: this.receivedRecipe.job_detailed[0].data, value: this.receivedRecipe.job_detailed[0].rating}, {name: this.receivedRecipe.job_detailed[1].data, value: this.receivedRecipe.job_detailed[1].rating}, {name: this.receivedRecipe.job_detailed[2].data, value: this.receivedRecipe.job_detailed[2].rating}, {name: this.receivedRecipe.job_detailed[3].data, value: this.receivedRecipe.job_detailed[3].rating},
+            {name: this.receivedRecipe.job_detailed[4].data, value: this.receivedRecipe.job_detailed[4].rating}, {name: this.receivedRecipe.job_detailed[5].data, value: this.receivedRecipe.job_detailed[5].rating}, {name: this.receivedRecipe.job_detailed[6].data, value: this.receivedRecipe.job_detailed[6].rating}, {name: this.receivedRecipe.job_detailed[7].data, value: this.receivedRecipe.job_detailed[7].rating},
+            {name: this.receivedRecipe.job_detailed[8].data, value: this.receivedRecipe.job_detailed[8].rating},{name: this.receivedRecipe.job_detailed[9].data, value: this.receivedRecipe.job_detailed[9].rating},{name: this.receivedRecipe.job_detailed[10].data, value: this.receivedRecipe.job_detailed[10].rating}
+          ]
+      },
+        {
+          name: 'Entertainment', series:
+          [{name: this.receivedRecipe.entertainment_detailed[0].data, value: this.receivedRecipe.entertainment_detailed[0].rating}, {name: this.receivedRecipe.entertainment_detailed[1].data, value: this.receivedRecipe.entertainment_detailed[1].rating}, {name: this.receivedRecipe.entertainment_detailed[2].data, value: this.receivedRecipe.entertainment_detailed[2].rating}, {name: this.receivedRecipe.entertainment_detailed[3].data, value: this.receivedRecipe.entertainment_detailed[3].rating},
+            {name: this.receivedRecipe.entertainment_detailed[4].data, value: this.receivedRecipe.entertainment_detailed[4].rating}, {name: this.receivedRecipe.entertainment_detailed[5].data, value: this.receivedRecipe.entertainment_detailed[5].rating}, {name: this.receivedRecipe.entertainment_detailed[6].data, value: this.receivedRecipe.entertainment_detailed[6].rating}, {name: this.receivedRecipe.entertainment_detailed[7].data, value: this.receivedRecipe.entertainment_detailed[7].rating},
+            {name: this.receivedRecipe.entertainment_detailed[8].data, value: this.receivedRecipe.entertainment_detailed[8].rating},{name: this.receivedRecipe.entertainment_detailed[9].data, value: this.receivedRecipe.entertainment_detailed[9].rating},{name: this.receivedRecipe.entertainment_detailed[10].data, value: this.receivedRecipe.entertainment_detailed[10].rating}
+          ]
+        }];
+      this.name = 'Date';
+      this.value = 'Hours';
     }
   }
   // ----------------------------------------------------------------------
@@ -107,6 +124,7 @@ export class RecipeListComponent implements OnInit {
     this.colorScheme.domain[1] = this.initializeColors(this.employeeData[1].value);
     this.colorScheme.domain[2] = this.initializeColors(this.employeeData[2].value);
     this.colorScheme.domain[3] = this.initializeColors(this.employeeData[3].value);
+    this.colorScheme.domain[4] = this.initializeColors(this.employeeData[4].value);
   }
 
   emitSelectedRecipe(data) {
@@ -143,6 +161,10 @@ export class RecipeListComponent implements OnInit {
           {
             'name': 'IdleTime',
             'value': this.receivedRecipe.idle_cumulative
+          },
+          {
+            'name': 'SiteVisits',
+            'value': this.receivedRecipe.site_cumulative
           }
         ];
         this.initColors();
