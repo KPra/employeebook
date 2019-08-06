@@ -24,9 +24,9 @@ export class RecipesComponent implements OnInit {
   new LeaveRating(1, '22/11/2018'), new LeaveRating(1, '23/11/2018'), new LeaveRating(0, '26/11/2018'),
   new LeaveRating(1, '27/11/2018'), new LeaveRating(0, '28/11/2018'), new LeaveRating(0, '29/11/2018'),
   new LeaveRating(1, '30/11/2018'), new LeaveRating(0, '1/12/2018'), new LeaveRating(0, '2/12/2018')], 6.9, [
-    new SIORating(8, '20/11/2018'), new SIORating(8, '21/11/2018'), new SIORating(7, '22/11/2018'), new SIORating(8, '23/11/2018'),
-    new SIORating(6, '26/11/2018'), new SIORating(6, '27/11/2018'), new SIORating(6, '28/11/2018'), new SIORating(7, '29/11/2018'),
-    new SIORating(5, '30/11/2018'), new SIORating(5, '1/12/2018'), new SIORating(5, '2/12/2018')
+    new SIORating(0, '20/11/2018'), new SIORating(0, '21/11/2018'), new SIORating(7, '22/11/2018'), new SIORating(8, '23/11/2018'),
+    new SIORating(0, '26/11/2018'), new SIORating(6, '27/11/2018'), new SIORating(0, '28/11/2018'), new SIORating(0, '29/11/2018'),
+    new SIORating(5, '30/11/2018'), new SIORating(0, '1/12/2018'), new SIORating(0, '2/12/2018')
   ], 7, [new Idletimerating(0, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(1, '23/11/2018'),
       new Idletimerating(0, '26/11/2018'), new Idletimerating(2, '27/11/2018'), new Idletimerating(0, '28/11/2018'), new Idletimerating(0, '29/11/2018'),
       new Idletimerating(3, '30/11/2018'), new Idletimerating(0, '1/12/2018'), new Idletimerating(0, '2/12/2018')],
@@ -43,9 +43,9 @@ export class RecipesComponent implements OnInit {
   new LeaveRating(0, '22/11/2018'), new LeaveRating(0, '23/11/2018'), new LeaveRating(1, '26/11/2018'),
   new LeaveRating(1, '27/11/2018'), new LeaveRating(0, '28/11/2018'), new LeaveRating(0, '29/11/2018'),
   new LeaveRating(1, '30/11/2018'), new LeaveRating(1, '1/12/2018'), new LeaveRating(0, '2/12/2018')], 3, [
-    new SIORating(4, '20/11/2018'), new SIORating(3, '21/11/2018'), new SIORating(4, '22/11/2018'), new SIORating(4, '23/11/2018'),
-    new SIORating(3, '26/11/2018'), new SIORating(4, '27/11/2018'), new SIORating(5, '28/11/2018'), new SIORating(5, '29/11/2018'),
-    new SIORating(4, '30/11/2018'), new SIORating(3, '1/12/2018'), new SIORating(1, '2/12/2018')
+    new SIORating(4, '20/11/2018'), new SIORating(0, '21/11/2018'), new SIORating(0, '22/11/2018'), new SIORating(0, '23/11/2018'),
+    new SIORating(3, '26/11/2018'), new SIORating(4, '27/11/2018'), new SIORating(0, '28/11/2018'), new SIORating(0, '29/11/2018'),
+    new SIORating(4, '30/11/2018'), new SIORating(3, '1/12/2018'), new SIORating(0, '2/12/2018')
   ], 5, [new Idletimerating(4, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(0, '22/11/2018'), new Idletimerating(0, '23/11/2018'),
         new Idletimerating(3, '26/11/2018'), new Idletimerating(4, '27/11/2018'), new Idletimerating(0, '28/11/2018'), new Idletimerating(0, '29/11/2018'),
         new Idletimerating(4, '30/11/2018'), new Idletimerating(3, '1/12/2018'), new Idletimerating(0, '2/12/2018')],
@@ -63,7 +63,7 @@ export class RecipesComponent implements OnInit {
   new LeaveRating(1, '27/11/2018'), new LeaveRating(0, '28/11/2018'), new LeaveRating(0, '29/11/2018'),
   new LeaveRating(1, '30/11/2018'), new LeaveRating(1, '1/12/2018'), new LeaveRating(1, '2/12/2018')], 7, [
     new SIORating(8, '20/11/2018'), new SIORating(7, '21/11/2018'), new SIORating(8, '22/11/2018'), new SIORating(7, '23/11/2018'),
-    new SIORating(6, '26/11/2018'), new SIORating(6, '27/11/2018'), new SIORating(6, '28/11/2018'), new SIORating(8, '29/11/2018'),
+    new SIORating(6, '26/11/2018'), new SIORating(6, '27/11/2018'), new SIORating(0, '28/11/2018'), new SIORating(0, '29/11/2018'),
     new SIORating(7, '30/11/2018'), new SIORating(7, '1/12/2018'), new SIORating(6, '2/12/2018')
   ], 8, [new Idletimerating(1, '20/11/2018'), new Idletimerating(2, '21/11/2018'), new Idletimerating(3, '22/11/2018'), new Idletimerating(2, '23/11/2018'),
       new Idletimerating(3, '26/11/2018'), new Idletimerating(2, '27/11/2018'), new Idletimerating(0, '28/11/2018'), new Idletimerating(0, '29/11/2018'),
@@ -81,9 +81,9 @@ export class RecipesComponent implements OnInit {
   new LeaveRating(1, '22/11/2018'), new LeaveRating(1, '23/11/2018'), new LeaveRating(0, '26/11/2018'),
   new LeaveRating(0, '27/11/2018'), new LeaveRating(1, '28/11/2018'), new LeaveRating(0, '29/11/2018'),
   new LeaveRating(1, '30/11/2018'), new LeaveRating(0, '1/12/2018'), new LeaveRating(1, '2/12/2018')], 5, [
-    new SIORating(5, '20/11/2018'), new SIORating(4, '21/11/2018'), new SIORating(8, '22/11/2018'), new SIORating(5, '23/11/2018'),
-    new SIORating(6, '26/11/2018'), new SIORating(4, '27/11/2018'), new SIORating(6, '28/11/2018'), new SIORating(5, '29/11/2018'),
-    new SIORating(5, '30/11/2018'), new SIORating(4, '1/12/2018'), new SIORating(5, '2/12/2018')
+    new SIORating(5, '20/11/2018'), new SIORating(0, '21/11/2018'), new SIORating(8, '22/11/2018'), new SIORating(5, '23/11/2018'),
+    new SIORating(0, '26/11/2018'), new SIORating(0, '27/11/2018'), new SIORating(6, '28/11/2018'), new SIORating(0, '29/11/2018'),
+    new SIORating(5, '30/11/2018'), new SIORating(0, '1/12/2018'), new SIORating(5, '2/12/2018')
   ], 8, [new Idletimerating(1, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(1, '23/11/2018'),
       new Idletimerating(0, '26/11/2018'), new Idletimerating(0, '27/11/2018'), new Idletimerating(2, '28/11/2018'), new Idletimerating(0, '29/11/2018'),
       new Idletimerating(2, '30/11/2018'), new Idletimerating(0, '1/12/2018'), new Idletimerating(2, '2/12/2018')],
@@ -100,9 +100,9 @@ export class RecipesComponent implements OnInit {
   new LeaveRating(1, '22/11/2018'), new LeaveRating(0, '23/11/2018'), new LeaveRating(1, '26/11/2018'),
   new LeaveRating(0, '27/11/2018'), new LeaveRating(1, '28/11/2018'), new LeaveRating(0, '29/11/2018'),
   new LeaveRating(0, '30/11/2018'), new LeaveRating(1, '1/12/2018'), new LeaveRating(1, '2/12/2018')], 6, [
-    new SIORating(6, '20/11/2018'), new SIORating(8, '21/11/2018'), new SIORating(5, '22/11/2018'), new SIORating(6, '23/11/2018'),
-    new SIORating(5, '26/11/2018'), new SIORating(6, '27/11/2018'), new SIORating(6, '28/11/2018'), new SIORating(5, '29/11/2018'),
-    new SIORating(5, '30/11/2018'), new SIORating(5, '1/12/2018'), new SIORating(5, '2/12/2018')
+    new SIORating(0, '20/11/2018'), new SIORating(0, '21/11/2018'), new SIORating(5, '22/11/2018'), new SIORating(0, '23/11/2018'),
+    new SIORating(5, '26/11/2018'), new SIORating(0, '27/11/2018'), new SIORating(6, '28/11/2018'), new SIORating(0, '29/11/2018'),
+    new SIORating(0, '30/11/2018'), new SIORating(5, '1/12/2018'), new SIORating(5, '2/12/2018')
   ], 6, [new Idletimerating(0, '20/11/2018'), new Idletimerating(0, '21/11/2018'), new Idletimerating(2, '22/11/2018'), new Idletimerating(0, '23/11/2018'),
       new Idletimerating(1, '26/11/2018'), new Idletimerating(0, '27/11/2018'), new Idletimerating(2, '28/11/2018'), new Idletimerating(0, '29/11/2018'),
       new Idletimerating(0, '30/11/2018'), new Idletimerating(1, '1/12/2018'), new Idletimerating(2, '2/12/2018')],

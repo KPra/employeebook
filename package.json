@@ -8,7 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "analyze": "webpack-bundle-analyzer dist/stats.json",
+    "sm": "source-map-explorer dist/vendor.js",
+    "esv": "es-check --module es5 dist/**/*.js"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +45,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~10.12.10",
     "codelyzer": "~4.5.0",
+    "es-check": "^5.0.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.1.1",
@@ -51,8 +55,10 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "~5.4.1",
+    "source-map-explorer": "^2.0.1",
     "ts-node": "~7.0.1",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }

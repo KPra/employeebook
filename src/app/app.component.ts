@@ -10,7 +10,7 @@ export class AppComponent {
   dataReceived: any;
 
   emitSelectedRecipe(data) {
-    console.log('received in app component ts');
+    console.log('received in app component ts --');
     this.dataReceived = data;
   }
 }

@@ -18,7 +18,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AppRoutingModule} from './app-routing.module';
 import { TrackListComponent } from './track-list/track-list.component';
-import {RecipeItemHolderComponent} from './recipes/recipe-list/recipe-item/recipe-item-holder.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {MatDatepickerModule } from '@angular/material/datepicker';
 import { HttpClientModule } from '@angular/common/http';
@@ -47,7 +46,6 @@ import { DashinternalComponent } from './dashboard/dashinternal/dashinternal.com
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
-    AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
@@ -55,7 +53,8 @@ import { DashinternalComponent } from './dashboard/dashinternal/dashinternal.com
     NgxChartsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   exports: [HttpClientModule],

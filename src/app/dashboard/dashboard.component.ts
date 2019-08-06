@@ -5,6 +5,8 @@ import { LeaveRating } from './leaverating';
 import { Employee } from './employee';
 import { RecipeItemComponent } from './../recipes/recipe-list/recipe-item/recipe-item.component';
 import { Component, OnInit } from '@angular/core';
+import {AppService} from "./AppService";
+
 
 @Component({
   selector: 'app-dashboard',
@@ -26,7 +28,9 @@ export class DashboardComponent implements OnInit {
   explodeSlices = true;
   doughnut = false;
 
-  constructor() { }
+  constructor(as: AppService) {
+    as.method1();
+  }
 
   ngOnInit() {
     this.initColors();

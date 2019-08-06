@@ -12,4 +12,7 @@ export class TrackListComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleHeading(){
+    console.log('tracklist toggleHeading');
+  }
 }
